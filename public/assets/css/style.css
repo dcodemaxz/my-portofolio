@@ -1,0 +1,245 @@
+:root {
+  --background: #0c0c0e;
+  --background-contrast: #18181b;
+
+  --text-primary: #dedede;
+  --text-secondary: #b8c0c7;
+
+  --color-primary: #f26419;
+  --color-secondary: #b44c14;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--background);
+}
+
+.header {
+  margin-top: 3.5rem;
+}
+
+.header__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user__infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.user__infos_img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 9999px;
+  background: var(--background);
+  border: 0.25rem solid var(--color-primary);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user__infos_img img {
+  width: 75%;
+  border-radius: 9999px;
+}
+
+.user__infos_text {
+  margin-top: 1rem;
+}
+
+.user__infos_text h1 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+
+.user__infos_text p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.user__infos_social {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.user__infos_social a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  transition: 0.3s all ease-in-out;
+}
+
+.user__infos_social a:hover {
+  color: var(--color-primary);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+  text-align: center;
+  flex-direction: column;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+#projects h1 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+  column-gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.project {
+  width: 27.5rem;
+  height: 13.5rem;
+  border-radius: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 10px 10px 55px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 55px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 55px 0px rgba(0, 0, 0, 0.75);
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project__info {
+  background: linear-gradient(180deg, rgba(242, 100, 25, 1) 0%, rgba(242, 100, 25, 0.5382528011204482) 58%, rgba(0, 212, 255, 0.08167016806722693) 100%);
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem 1.25rem;
+  align-items: flex-end;
+  transition-duration: 0.3s;
+  bottom: -100%;
+  position: absolute;
+  left: 0;
+}
+
+.project__info_text {
+  text-align: start;
+}
+
+.project__info_text h2 {
+  color: var(--text-primary);
+}
+
+.project__info_text p {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.project__info_text a {
+  text-decoration: none;
+}
+
+.project__info_text a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  margin-top: 1rem;
+  transition: 0.3s all ease-in-out;
+}
+
+.project__info_text a i {
+  color: var(--text-primary);
+  font-size: 2rem;
+}
+
+.project__links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project__info_text a:hover {
+  background-color: var(--color-secondary);
+}
+
+.project:hover .project__info {
+  bottom: 1%;
+}
+
+.project__info_favicon {
+  width: 15% !important;
+}
+
+#skills h1 {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.skill {
+  filter: grayscale(100%);
+  transition: 0.3s all ease-in-out;
+}
+
+.skill:hover {
+  filter: grayscale(0%);
+  transform: rotate(360deg);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+footer a {
+  display: flex;
+  align-items: centers;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 500px) {
+  .project {
+    width: auto;
+  }
+}
