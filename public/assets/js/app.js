@@ -1,3 +1,41 @@
+// Particles effect
+const container = document.querySelector('.header');
+
+function createParticle() {
+  const particle = document.createElement('div');
+  particle.classList.add('particle');
+
+  // Posisi awal partikel secara acak
+  particle.style.left = Math.random() * 100 + 'vw';
+  particle.style.top = '-10px';
+
+  // Ukuran partikel secara acak
+  particle.style.width = Math.random() * 4 + 'px';
+  particle.style.height = particle.style.width;
+
+  container.appendChild(particle);
+
+  // Hapus partikel setelah animasi selesai
+  setTimeout(() => {
+    particle.remove();
+  }, 2000);
+}
+
+// Buat partikel baru setiap interval waktu tertentu
+setInterval(createParticle, 250);
+
+// Posisi particle menyesuaikan layat saat di scrolling
+window.addEventListener('scroll', function() {
+  let scrolled = window.pageYOffset;
+
+  if (scrolled > 100) {
+    // Tambahkan kelas atau ubah style elemen saat sudah scroll 100px
+    document.body.classList.add('scrolled');
+  } else {
+    document.body.classList.remove('scrolled');
+  }
+});
+
 function searchProjects() {
   const projectsDiv = document.querySelector('.projects');
 

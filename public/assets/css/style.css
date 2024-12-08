@@ -1,12 +1,12 @@
 :root {
-  --background: #0c0c0e;
-  --background-contrast: #18181b;
+  --background: #111824;
+  --background-contrast: #18181B;
 
-  --text-primary: #dedede;
-  --text-secondary: #b8c0c7;
+  --text-primary: #DEDEDE;
+  --text-secondary: #B8C0C7;
 
-  --color-primary: #f26419;
-  --color-secondary: #b44c14;
+  --color-primary: #49FFEF;
+  --color-secondary: #185245;
 }
 
 * {
@@ -19,6 +19,10 @@
 
 body {
   background-color: var(--background);
+  font-family: Arial, sans-serif;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -29,6 +33,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  margin: 0px auto;
+  text-align: center;
+  background-color: #222B3B;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    margin: 20px auto;
+    overflow: hidden;
+    text-align: center;
+    background-color: #222B3B;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .user__infos {
@@ -90,6 +111,9 @@ body {
 }
 
 .main {
+  background-color: #0000005E;
+  padding: 20px;
+  border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,6 +128,8 @@ body {
   color: var(--text-primary);
   font-size: 1.5rem;
   margin-bottom: 2rem;
+  text-decoration: underline;
+  text-decoration-color: #909090;
 }
 
 .projects {
@@ -223,23 +249,86 @@ body {
 }
 
 footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2.5rem;
+    background-color: #303030E0;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
-footer a {
-  display: flex;
-  align-items: centers;
-  justify-content: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: var(--text-secondary);
+footer p {
+    margin: 0;
+}
+
+a {
+    color: #CFFFF4
 }
 
 @media (max-width: 500px) {
   .project {
     width: auto;
   }
+}
+
+.floating {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.floating-body {
+    display: flex;
+    height:80vh;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.floating-body div {
+    border-radius: 20px;
+    padding: 50px;
+    margin: auto;
+    width: auto;
+    background-color: #222B3B;
+}
+
+.floating-body button {
+    cursor: pointer;
+    font-size: 1.1em;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #2A4E4D;
+    border: 1;
+    margin-top: 20px;
+    color: #FFFFFF;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  animation: fall 2s linear infinite;
+}
+
+@keyframes fall {
+  100% {
+    top: 100vh;
+  }
+}
+
+@media (min-height: 500px) {
+    .particle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
 }

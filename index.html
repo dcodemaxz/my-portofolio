@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bohr Template</title>
+    <title>Maxtream_09</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,66 +23,68 @@
     <script src="https://unpkg.com/phosphor-icons"></script>
   </head>
   <body>
+    <div class="floating" id="floating">
+        <div class="floating-body">
+            <div>
+                <h1>Accept cookies!</h1>
+                <video controls width="250" height="250" src="https://files.catbox.moe/5wa72i.mp4"></video>
+                <p>
+                    This project is still under development, please feel free to  <a href="https://wa.me/6289508899033/?text=I%20want%20to%20contribute%20%2F%20report%20an%20issue%20about%20Vikaru-API">Contribute</a> or report any bugs/issues.
+                </p>
+                <button onclick="playmusic()">Accept 🍪</button>
+            </div>
+        </div>
+    </div>
+    
     <header class="header">
       <div class="header__container">
         <div class="user__infos" data-bohr-cms data-bohr-file="public/index.html" data-bohr-index="1" data-bohr-dist-file="index.html" data-bohr-dist-index="1">
           
           <div class="user__infos_img">
-            <img src="https://github.com/gabrielmzl.png" alt="Developer's profile image" />
           </div>
 
           <div class="user__infos_text">
-            <h1></h1>
-            <p>Frontend Developer</p>
+            <h1>Maxtream_09</h1>
+            <p>Hanya pemula!</p>
           </div>
 
           <div class="user__infos_social">
-            <a target="_blank" class="ph-github-logo-thin">&nbsp;</a>
-            <a target="_blank" class="ph-linkedin-logo-thin">&nbsp;</a>
-            <a target="_blank" class="ph-whatsapp-logo-thin">&nbsp;</a>
-            <a target="_blank" class="ph-instagram-logo-thin">&nbsp;</a>
-            <a target="_blank" class="ph-twitter-logo-thin">&nbsp;</a>
-            <a target="_blank" class="ph-discord-logo-thin">&nbsp;</a>
+            <a target="_blank" class="ph-github-logo-thin" href="https://github.com/Maxz-09"</a>
+            <a target="_blank" class="ph-linkedin-logo-thin" href="https://linktr.ee/Maxtream_09"</a>
+            <a target="_blank" class="ph-whatsapp-logo-thin" href="https://wa.me/6289508899033"</a>
+            <a target="_blank" class="ph-instagram-logo-thin" href="https://www.instagram.com/maxtream_09/profilecard/?igsh=MTd0bWs3NnJlNmI2cA=="</a>
+            <a target="_blank" class="ph-twitter-logo-thin" href="https://x.com/Maxtream_09?t=CJZPCJ7zoxuS9Lnm7ywilw&s=09"</a>
+            <a target="_blank" class="ph-discord-logo-thin" href="https://discord.gg/4YSh262B"</a>
           </div>
 
         </div>
       </div>
     </header>
 
+  
     <main class="main">
       <section id="projects">
-        <h1>Projects</h1>
-
-        <div class="projects">
-          
-        </div>
-      </section>
-
-      <section id="skills">
-        <h1>Skills</h1>
-
-        <div class="skills">
-          <div class="skill">
-            <img src="public/assets/img/html-icon.svg" alt="Html" />
-          </div>
-          <div class="skill">
-            <img src="public/assets/img/css-icon.svg" alt="Css" />
-          </div>
-          <div class="skill">
-            <img src="public/assets/img/javascript-icon.svg" alt="Javascript" />
-          </div>
-          <div class="skill">
-            <img src="public/assets/img/react-icon.svg" alt="React" />
-          </div>
+        <div class="container">
+          <h1>About Me</h1>
+          <p>Hallo! My name is Max, I just have a hobby and am interested in programming</p>
         </div>
       </section>
     </main>
 
-    <footer>
-      <a href="https://bohr.io" target="_blank">
-        powered by <img src="public/assets/img/bohr_logo.png" alt="" />
-      </a>
-    </footer>
+<script>
+  var a = document.getElementById('floating');
+  function playmusic() {
+    a.style.display = "none";
+    var audio = new Audio('https://files.catbox.moe/x5v904.mp3');
+    audio.play();
+  }
+</script>
+
+<footer>
+  <p>
+    &copy; 2024 <a href="https://linktr.ee/Maxtream_09">Maxtream_09</a>. All Rights Reserved.
+  </p>
+</footer>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="public/assets/js/app.js"></script>
