@@ -1,0 +1,397 @@
+:root{
+  --bg-color: #0b0f18;
+  --muted-bg: #0f1720;
+  --card-bg: rgba(255,255,255,0.04);
+  --accent: #49FFEF;
+  --text: #E8E8E8;
+  --muted: #9AA7B3;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 14px;
+  --max-width: 1100px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Poppins",sans-serif}
+html,body{height:100%;width:100%;background:var(--bg-color);color:var(--text);scroll-behavior:smooth; overflow-x: hidden;}
+a{color:inherit;text-decoration:none}
+
+/* CUSTOM CANVAS UNTUK PARTIKEL */
+#backgroundCanvas{
+  position:fixed;
+  inset:0;
+  z-index:0; 
+  width:100%;
+  height:100%;
+  display: block; 
+}
+
+/* Konten utama harus memiliki Z-INDEX lebih tinggi dari partikel */
+header.header, main {
+  position: relative; 
+  z-index: 2; 
+}
+
+/* Top navbar (right) */
+.nav {
+  position:fixed; top:18px; right:28px; z-index:30;
+  display:flex; gap:18px; align-items:center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  padding:10px 16px; border-radius:999px; backdrop-filter: blur(6px);
+  border:1px solid rgba(255,255,255,0.03);
+}
+.nav a { color:var(--muted); font-size:0.92rem; padding:6px 8px; border-radius:6px; }
+.nav a:hover{ color:var(--accent); transform:translateY(-2px) }
+.btn-resume {
+  border:1px solid var(--accent); color:var(--accent); padding:6px 10px; border-radius:8px; font-weight:600;
+  background:transparent;
+}
+.btn-resume:hover{ background: rgba(73,255,239,0.04) }
+
+/* Left vertical socials (Sembunyi permanen) */
+.side-socials {
+  position:fixed; left:28px; bottom:40px; z-index:25; display:none; 
+  flex-direction:column; gap:12px;
+  align-items:center;
+}
+.side-socials a{ 
+    color:var(--muted); 
+    font-size:1.1rem; 
+    display:inline-block; 
+    padding:6px; 
+    border-radius:6px;
+    transition: all 0.2s ease-out; 
+    box-shadow: 0 0 0 transparent; 
+}
+.side-socials a:hover{ 
+    color:var(--accent); 
+    transform:translateY(-4px); 
+    box-shadow: 0 8px 20px rgba(73,255,239,0.18); 
+}
+
+/* Right vertical email */
+.side-email {
+  position:fixed; right:22px; bottom:40px; transform:rotate(90deg); transform-origin:right bottom; z-index:20;
+  color:var(--muted); font-size:0.82rem; letter-spacing:4px;
+}
+.side-email a{ 
+    color:var(--muted);
+    transition: color 0.2s ease-out; 
+}
+.side-email a:hover{ 
+    color:var(--accent);
+}
+
+/* Hero (top) */
+header.header {
+  padding:120px 20px 0px; display:flex; justify-content:center; align-items:center;
+  min-height:56vh;
+}
+.hero {
+  width:100%; max-width:800px; text-align:center; margin:0 auto;
+}
+.avatar {
+  width:150px; height:150px; border-radius:999px; overflow:hidden;
+  margin:0 auto 18px; border:4px solid var(--accent);
+  box-shadow: 0 6px 28px rgba(73,255,239,0.12), inset 0 0 18px rgba(73,255,239,0.06);
+}
+.avatar img{ width:100%; height:100%; object-fit:cover; display:block }
+
+.hero h1 { color:var(--accent); font-size:1.9rem; letter-spacing:0.6px; margin-bottom:8px }
+.hero h2 { font-size:3rem; margin-bottom:12px; color:var(--text); font-weight:700 }
+.hero p { color:var(--muted); max-width:700px; margin:0 auto 18px; line-height:1.6 }
+
+/* Hero Icons (Hover Nimbul) */
+.hero .icons { display:flex; gap:12px; justify-content:center; margin-top:8px }
+.hero .icons a { 
+    font-size:1.4rem; 
+    color:var(--muted); 
+    padding:8px; 
+    border-radius:8px;
+    transition: all 0.2s ease-out; 
+}
+.hero .icons a:hover{ 
+    color:var(--accent); 
+    transform:translateY(-4px); 
+    filter:drop-shadow(0 8px 20px rgba(73,255,239,0.15)); 
+}
+
+/* Container untuk Typing SVG */
+.typing-svg-container {
+    max-width: 100%; /* Memastikan tidak melebihi lebar kontainer */
+    text-align: center; /* Memastikan SVG berada di tengah */
+}
+
+.typing-svg-container img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Content sections */
+main { padding:40px 20px 120px; max-width:var(--max-width); margin:0 auto }
+.section { margin:56px 0; display:block }
+.section .card {
+  background:var(--card-bg); border-radius:12px; padding:26px; box-shadow:0 6px 30px rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+
+/* SKILLS LAYOUT BARU (Gabungan Experience + Skills) */
+.two-col { 
+    display:grid; 
+    grid-template-columns: 240px 1fr; 
+    gap:28px; 
+    align-items:start 
+}
+
+/* SKILLS LIST KIRI */
+.skills-list { 
+    border-left:2px solid rgba(73,255,239,0.06); 
+    padding-left:18px; 
+    color:var(--muted);
+}
+.skills-list button {
+  display:block; margin:12px 0; background:transparent; border:none; color:var(--muted);
+  text-align:left; cursor:pointer; padding:8px 6px; border-radius:6px;
+  font-size: 0.95rem; 
+  transition: all 0.2s;
+}
+.skills-list button.active{ 
+    color:var(--accent); 
+    border-left:3px solid var(--accent); 
+    padding-left:10px; 
+    font-weight:600;
+    margin:12px 0; 
+}
+
+/* SKILLS DETAIL KANAN (Content) */
+.skill-detail h3{ color:var(--text); margin-bottom:8px }
+/* Menambahkan garis bawah (separator) */
+.skill-detail p{ 
+    color:var(--muted); 
+    line-height:1.6; 
+    margin-bottom:18px; 
+    padding-bottom:18px; 
+    border-bottom: 1px solid rgba(255,255,255,0.08); 
+}
+
+/* List Data Dinamis/Statis */
+.skill-list-content {
+    list-style: none; 
+    padding: 0;
+}
+.skill-list-content li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--muted);
+    position: relative; 
+    padding-left: 18px; 
+}
+/* Menambahkan bullet point (-) */
+.skill-list-content li::before { 
+    content: "-"; 
+    color: var(--accent);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 6px; 
+    font-size: 1.1rem;
+}
+.skill-list-content li:last-child {
+    border-bottom: none;
+}
+.skill-list-content li .value {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* Gaya untuk konten kontribusi */
+.contribution-items p {
+    margin-bottom: 10px; 
+    line-height: 1.5;
+    color: var(--muted);
+    position: relative;
+    padding-left: 18px; 
+}
+.contribution-items p::before { 
+    content: "-"; 
+    color: var(--accent);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 0; 
+    font-size: 1.1rem;
+}
+.contribution-items p strong {
+    color: var(--text); 
+    font-weight: 600;
+    margin-right: 4px; 
+}
+
+/* *** GAYA UNTUK SECTION 04 STATS (Dinamis) *** */
+.stats-container {
+    margin-top: 30px; 
+    text-align: center;
+    width: 100%;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 28px; /* Jarak antara elemen */
+}
+
+/* --- TATA LETAK GRID BARU (untuk stats-grid) --- */
+.stats-grid {
+    display: grid;
+    /* Statistik akan mengambil 2/3 lebar, Deskripsi 1/3 */
+    grid-template-columns: 2fr 1fr; 
+    gap: 28px;
+    align-items: start; /* Konten rata atas */
+    width: 100%;
+}
+
+.stats-content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+}
+/* --- AKHIR TATA LETAK GRID BARU --- */
+
+.stats-container img {
+    max-width: 100%; 
+    height: auto;
+    margin: 0 auto; 
+    display: block;
+}
+
+/* Aturan untuk kartu statistik: UKURAN MAKSIMAL Disesuaikan */
+.github-stats-card {
+    max-width: 80%; /* Disesuaikan menjadi 80% */
+    width: 100%;
+    border-radius: 10px; 
+}
+
+.snake-animation {
+    max-width: 100%; /* Tetap full width */
+}
+/* *** AKHIR GAYA SECTION 04 STATS *** */
+
+
+/* Featured project layout */
+.featured {
+  display:grid; grid-template-columns: 1fr 360px; gap:28px; align-items:center; margin-top:18px;
+}
+.featured .hero-card {
+  border-radius:12px; overflow:hidden; position:relative;
+}
+.featured .hero-card img{ width:100%; height:320px; object-fit:cover; display:block; filter:contrast(0.95) }
+.featured .side {
+  padding:22px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03)); border-radius:12px;
+}
+.featured .side h4 { color:var(--accent); font-size:13px; margin-bottom:10px }
+.featured .side h3 { color:var(--text); margin-bottom:12px }
+.featured .side p { color:var(--muted); line-height:1.5; margin-bottom:14px }
+.featured .side .tags { display:flex; gap:8px; flex-wrap:wrap; color:var(--muted); font-size:0.85rem }
+
+/* Projects grid */
+.grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:18px }
+.proj-card { 
+  background:var(--card-bg); 
+  border-radius:12px; 
+  padding:14px; 
+  transition:transform .22s, box-shadow .22s; 
+  display: block;
+  text-decoration: none;
+}
+.proj-card:hover{ transform:translateY(-6px); box-shadow:0 10px 30px rgba(0,0,0,0.5) }
+.proj-card img{ width:100%; height:140px; object-fit:cover; border-radius:8px; margin-bottom:10px }
+.proj-card h5{ color:var(--accent); margin-bottom:6px }
+.proj-card p{ color:var(--muted); font-size:0.95rem; line-height:1.4 }
+
+/* Contact */
+.contact { text-align:center }
+.contact .btn { 
+    margin-top:24px; /* Jarak ditingkatkan */
+    padding:10px 18px; 
+    border:1px solid var(--accent); 
+    color:var(--accent); 
+    border-radius:8px 
+}
+
+/* Jarak vertikal tambahan untuk tombol View All on GitHub */
+.btn-gap-top {
+    margin-top: 24px; 
+}
+
+/* footer */
+footer.site-footer{ text-align:center; color:var(--muted); margin-top:40px; padding:30px 0 }
+
+/* --- RESPONSIVITAS MOBILE --- */
+@media (max-width: 980px){
+  .two-col{ grid-template-columns:1fr }
+  .featured{ grid-template-columns:1fr }
+  .nav{ right:14px; padding:8px 12px }
+  
+  .side-socials, 
+  .side-email { 
+      display: none !important; 
+  }
+
+  /* Kembali ke tata letak kolom tunggal di layar kecil */
+  .stats-grid {
+      grid-template-columns: 1fr;
+  }
+  .stats-content, .stats-desc {
+      width: 100%;
+      text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+    /* 1. Navigasi Atas (.nav) - Pindah ke tengah & kecilkan */
+    .nav {
+        top: 14px;
+        left: 50%;
+        transform: translateX(-50%); 
+        right: auto;
+        gap: 10px;
+        padding: 8px 12px;
+        max-width: 95%; 
+        overflow-x: auto; 
+        white-space: nowrap;
+    }
+    
+    .nav a { 
+        font-size: 0.8rem; 
+        padding: 4px 6px;
+    }
+
+    .btn-resume {
+        padding: 4px 8px;
+    }
+
+    /* 2. Sembunyikan bilah sisi pada mobile */
+    .side-socials, 
+    .side-email { 
+        display: none !important; 
+    }
+
+    /* 3. Hero Section - Sesuaikan padding agar tidak terlalu tinggi */
+    header.header {
+        padding-top: 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .avatar{ width:100px;height:100px }
+    .hero h2{ font-size:1.6rem }
+    .hero h1{ font-size:1.2rem }
+    /* Pastikan kartu statistik di mobile mengisi penuh (95% dari lebar) */
+    .github-stats-card {
+        width: 95%; /* Mengisi hampir penuh di mobile */
+        max-width: 100%; 
+    }
+    .snake-animation {
+        width: 95%; 
+        max-width: 100%; 
+    }
+}

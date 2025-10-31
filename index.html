@@ -1,92 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maxtream_09</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>dcodemaxz | Portfolio</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/phosphor-icons"></script> 
+  
+  <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
 
-    <link
-      rel="shortcut icon"
-      href="public/assets/img/favicon.ico"
-      type="image/x-icon"
-    />
+  <canvas id="backgroundCanvas"></canvas> 
 
-    <link rel="stylesheet" href="public/assets/css/style.css" />
-    <script src="https://unpkg.com/phosphor-icons"></script>
-  </head>
-  <body>
-    <div class="floating" id="floating">
-        <div class="floating-body">
-            <div>
-                <h1>Accept cookies!</h1>
-                <video controls width="250" height="250" src="https://files.catbox.moe/5wa72i.mp4"></video>
-                <p>
-                    This project is still under development, please feel free to  <a href="https://wa.me/6289508899033/?text=I%20want%20to%20contribute%20%2F%20report%20an%20issue%20about%20Vikaru-API">Contribute</a> or report any bugs/issues.
-                </p>
-                <button onclick="playmusic()">Accept 🍪</button>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#about">01. About</a>
+    <a href="#skills">02. Skills</a>
+    <a href="#projects">03. Work</a>
+    <a href="#stats">04. Stats</a> 
+    <a href="#contact">05. Contact</a>
+    <a class="btn-resume" href="#" target="_blank" rel="noopener noreferrer">Resume</a>
+  </nav>
+
+  <div class="side-socials" aria-hidden="true" style="display:none;"></div>
+
+  <div class="side-email"><a href="mailto:dcodemaxz@proton.me" rel="noopener noreferrer">dcodemaxz@proton.me</a></div>
+
+  <header class="header">
+    <div class="hero">
+      <div class="avatar" aria-hidden="false">
+        <img src="https://github.com/dcodemaxz.png" alt="Profile photo of dcodemaxz">
+      </div>
+
+      <h1 class="user__infos_text" style="margin-bottom:8px">dcodemaxz</h1>
+      <p style="max-width:720px; margin:0 auto 14px;color:var(--muted)">Full-Stack Developer • Open Source Enthusiast • Tech Explorer</p>
+
+      <div class="icons" style="display:flex;gap:14px;justify-content:center">
+        <a href="https://github.com/dcodemaxz" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="ph-github-logo" style="font-size:22px;color:var(--muted)"></i></a>
+        <a href="https://linktr.ee/dcodemaxz" target="_blank" rel="noopener noreferrer" aria-label="Linktree"><i class="ph-linkedin-logo" style="font-size:22px;color:var(--muted)"></i></a>
+        <a href="https://wa.me/6289508899033" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="ph-whatsapp-logo" style="font-size:22px;color:var(--muted)"></i></a>
+        <a href="https://instagram.com/dcodemaxz" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ph-instagram-logo" style="font-size:22px;color:var(--muted)"></i></a>
+        <a href="https://x.com/dcodemaxz" target="_blank" rel="noopener noreferrer" aria-label="X/Twitter"><i class="ph-twitter-logo" style="font-size:22px;color:var(--muted)"></i></a>
+      </div>
+      
+      <div class="typing-svg-container" style="margin-top: 15px;"> 
+        <a href="https://git.io/typing-svg">
+          <img 
+            style="max-width: 100%; height: auto;" 
+            src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=1000&pause=1000&color=49FFEF&center=true&width=435&lines=Eating+%F0%9F%8D%9B;Working+%F0%9F%92%BC;Learning+%F0%9F%93%9A;Gaming+%F0%9F%8E%AE;Coding+%F0%9F%91%A8%F0%9F%8F%BB%E2%80%8D%F0%9F%92%BB;Sleeping+%F0%9F%98%B4" 
+            alt="Typing SVG" 
+          />
+        </a>
+      </div>
+      </div>
+  </header>
+
+  <main>
+
+    <section id="about" class="section">
+      <div class="card">
+        <h2 style="color:var(--accent);margin-bottom:10px">01. About</h2>
+        <p style="color:var(--muted);max-width:900px">
+          Hi — I'm Max. I build automation tools, APIs and developer-focused utilities.
+          I enjoy designing modular systems, improving performance, and contributing to open-source projects.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="card">
+        <h2 style="color:var(--accent);margin-bottom:20px">02. Technical Skills</h2>
+        
+        <div class="two-col">
+          <div class="skills-list" role="tablist" aria-label="Technical skills categories">
+            <button class="skill-tab active" data-key="language">Language</button>
+            <button class="skill-tab" data-key="framework">Framework</button>
+            <button class="skill-tab" data-key="kontribusi">Contribution</button>
+            <button class="skill-tab" data-key="others">Other Skills</button> 
+          </div>
+
+          <div class="skill-detail">
+            <div id="language-content" class="active-content">
+                <h3 id="lang-title">Top Languages (GitHub Stats)</h3>
+                <p id="lang-desc">Loading description...</p> 
+                <ul id="language-list" class="skill-list-content">
+                    <li>Loading language data...</li>
+                </ul>
             </div>
-        </div>
-    </div>
-    
-    <header class="header">
-      <div class="header__container">
-        <div class="user__infos" data-bohr-cms data-bohr-file="public/index.html" data-bohr-index="1" data-bohr-dist-file="index.html" data-bohr-dist-index="1">
-          
-          <div class="user__infos_img">
-          </div>
 
-          <div class="user__infos_text">
-            <h1>Maxtream_09</h1>
-            <p>Hanya pemula!</p>
-          </div>
+            <div id="framework-content" style="display:none;">
+                <h3 id="framework-title">Frameworks & Tools</h3>
+                <p id="framework-desc">Key frameworks and tools I use for full-stack development.</p>
+                <ul id="framework-list" class="skill-list-content">
+                    <li>Node.js / Shell <span class="value">Backend</span></li>
+                    <li>React / Next.js <span class="value">Frontend</span></li>
+                    <li>MySQL / MongoDB <span class="value">Database</span></li>
+                    <li>Shell Script <span class="value">Deployment</span></li>
+                </ul>
+            </div>
 
-          <div class="user__infos_social">
-            <a target="_blank" class="ph-github-logo-thin" href="https://github.com/Maxz-09"</a>
-            <a target="_blank" class="ph-linkedin-logo-thin" href="https://linktr.ee/Maxtream_09"</a>
-            <a target="_blank" class="ph-whatsapp-logo-thin" href="https://wa.me/6289508899033"</a>
-            <a target="_blank" class="ph-instagram-logo-thin" href="https://www.instagram.com/maxtream_09/profilecard/?igsh=MTd0bWs3NnJlNmI2cA=="</a>
-            <a target="_blank" class="ph-twitter-logo-thin" href="https://x.com/Maxtream_09?t=CJZPCJ7zoxuS9Lnm7ywilw&s=09"</a>
-            <a target="_blank" class="ph-discord-logo-thin" href="https://discord.gg/4YSh262B"</a>
-          </div>
+            <div id="kontribusi-content" style="display:none;">
+                <h3 id="kontribusi-title">Key Contributions & Projects</h3>
+                <p id="kontribusi-desc">My main areas of focus in open-source communities and significant personal projects.</p>
+                <div class="contribution-items">
+                    <p><strong>Vikaru Project</strong>: Lead Developer, focused on modularity and stability.</p>
+                    <p><strong>CI/CD Automation</strong>: Created robust installation scripts for various environments (Termux/Linux).</p>
+                    <p><strong>Library Forking</strong>: Maintenance and bug fixes on third-party library <em>custom forks</em>.</p>
+                </div>
+            </div>
 
+            <div id="others-content" style="display:none;">
+                <h3 id="others-title">Other Skills & Softwares</h3>
+                <p id="others-desc">Tools, platforms, and soft skills that complement my technical profile.</p>
+                <ul id="others-list" class="skill-list-content">
+                    <li>VSCode / Mt Manager <span class="value">Editor</span></li>
+                    <li>Photoshop / Pixellab <span class="value">Design</span></li>
+                    <li>Ununtu / Termux <span class="value">Terminal</span></li>
+                    <li>Time Management <span class="value">Soft Skill</span></li>
+                </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
+    </section>
 
-  
-    <main class="main">
-      <section id="projects">
-        <div class="container">
-          <h1>About Me</h1>
-          <p>Hallo! My name is Max, I just have a hobby and am interested in programming</p>
+    <section id="projects" class="section">
+      <div class="card">
+        <h2 style="color:var(--accent);margin-bottom:12px">03. Some Things I've Built</h2>
+
+        <div class="featured" style="margin-bottom:18px">
+          <div class="hero-card">
+            <img src="https://placehold.co/1000x600/052028/9ef3e6?text=Featured+Project+-+Vikaru" alt="Featured project Vikaru">
+          </div>
+          <aside class="side">
+            <h4>Featured Project</h4>
+            <h3>Vikaru Bot — Automation Suite</h3>
+            <p>Advanced WhatsApp automation system with plugins, multi-tenant session management, and a lightweight installer for Termux and servers.</p>
+            <div class="tags" aria-hidden="true">Node.js • Baileys • Shell • CI/CD</div>
+            <div style="margin-top:14px">
+              <a href="https://github.com?dcodemaxz/Vikaru-Bot" class="btn" style="border:1px solid var(--accent); padding:8px 12px; color:var(--accent); border-radius:8px" rel="noopener noreferrer">Learn more</a>
+            </div>
+          </aside>
         </div>
-      </section>
-    </main>
 
-<script>
-  var a = document.getElementById('floating');
-  function playmusic() {
-    a.style.display = "none";
-    var audio = new Audio('https://files.catbox.moe/x5v904.mp3');
-    audio.play();
-  }
-</script>
+        <div class="grid" id="github-projects" aria-live="polite">
+            <p style="text-align:center; color:var(--muted);">Loading projects from GitHub...</p>
+        </div>
 
-<footer>
-  <p>
-    &copy; 2024 <a href="https://linktr.ee/Maxtream_09">Maxtream_09</a>. All Rights Reserved.
-  </p>
-</footer>
+        <div class="btn-gap-top" style="text-align:center;">
+          <a href="https://github.com/dcodemaxz" class="btn" style="border:1px solid var(--accent); padding:8px 12px; color:var(--accent); border-radius:8px" rel="noopener noreferrer" target="_blank">View All on GitHub</a>
+        </div>
+      </div>
+    </section>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="public/assets/js/app.js"></script>
-  </body>
+    <section id="stats" class="section">
+        <div class="card">
+            <h2 style="color:var(--accent);margin-bottom:12px">04. GitHub Stats & Metrics</h2>
+            
+            <div class="stats-grid">
+                
+                <div class="stats-content">
+                    <picture class="snake-animation">
+                      <source
+                        media="(prefers-color-scheme: dark)"
+                        srcset="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg" />
+                      <source
+                        media="(prefers-color-scheme: light)"
+                        srcset="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake.svg" />
+                      <img
+                        alt="github contribution grid snake animation"
+                        style="max-width: 100%; height: auto;"
+                        src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake.svg" />
+                    </picture>
+                
+                    <img 
+                        src="https://github-readme-stats.vercel.app/api?username=dcodemaxz&show_icons=true&theme=dark&rank_icon=github&bg_color=0f172000&hide_border=true" 
+                        alt="dcodemaxz GitHub Stats" 
+                        class="github-stats-card"
+                    >
+                </div>
+                
+                <div class="stats-desc">
+                    <h4 style="color:var(--accent); font-weight:600; margin-bottom: 10px;">About These Metrics</h4>
+                    <p style="margin-bottom: 10px; color:var(--muted); line-height: 1.5;">This visualization shows my daily contribution activity and GitHub account ranking.</p>
+                    <p style="margin-bottom: 10px; color:var(--muted); line-height: 1.5;"><strong>Contribution Snake:</strong> Represents <em>commits</em> to repositories in the form of a retro animation, showing consistent <em>coding</em>.</p>
+                    <p style="color:var(--muted); line-height: 1.5;"><strong>GitHub Stats:</strong> Displays total stars earned, annual commits, and issues/PRs opened, as an account performance summary.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="card contact">
+        <h2 style="color:var(--accent);margin-bottom:12px">05. What's Next?</h2>
+        <h3 style="color:var(--text);margin-bottom:8px">Get In Touch</h3>
+        <p style="color:var(--muted);max-width:760px;margin:0 auto 12px">Although I'm not actively looking, my inbox is open. If you want to collaborate, hire, or just say hi — send a message.</p>
+        <a href="https://wa.me/+6289508899033" class="btn" rel="noopener noreferrer">Say Hello</a>
+      </div>
+    </section>
+
+    <footer class="site-footer">Designed & Built by dcodemaxz • © 2025</footer>
+  </main>
+
+  <audio id="bgmusic" loop>
+    <source src="https://files.catbox.moe/x5v904.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="public/js/app.js"></script>
+</body>
 </html>
